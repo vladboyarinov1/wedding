@@ -10,14 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.3",
     "@fontsource-variable/dancing-script": "^5.0.16",
     "@fontsource-variable/lora": "^5.0.9",
     "@fontsource/bad-script": "^5.0.8",
     "@fontsource/marck-script": "^5.0.18",
     "@fontsource/rochester": "^5.0.18",
     "@mui/material": "^5.15.6",
+    "@mui/styled-engine-sc": "6.0.0-alpha.12",
     "@pbe/react-yandex-maps": "^1.2.5",
     "axios": "^1.6.5",
+    "cache": "link:@emotion/react/cache",
     "formik": "^2.4.5",
     "react": "^18.2.0",
     "react-countdown": "^2.3.5",
