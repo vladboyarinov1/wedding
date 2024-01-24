@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11",
     "@fontsource-variable/dancing-script": "^5.0.16",
     "@fontsource-variable/lora": "^5.0.9",
     "@fontsource/bad-script": "^5.0.8",
@@ -19,6 +20,7 @@
     "@mui/styled-engine-sc": "6.0.0-alpha.12",
     "@pbe/react-yandex-maps": "^1.2.5",
     "axios": "^1.6.5",
+    "cache@^11": "link:@emotion/react/cache@^11",
     "formik": "^2.4.5",
     "react": "^18.2.0",
     "react-countdown": "^2.3.5",
