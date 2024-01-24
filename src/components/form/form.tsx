@@ -34,14 +34,14 @@ export const SendForm = () => {
         onSubmit: (values: any) => {
             sendEmail(values)
         },
-        validate: values => {
+        validate: (values) => {
             const errors: Partial<FormValues> = {};
 
             if (!values.name) {
                 errors.name = 'Обязательное поле';
             }
             if (!values.secondDay) {
-                errors.name = 'Обязательное поле';
+                errors.secondDay = 'Обязательное поле';
             }
             if (!values.presence) {
                 errors.presence = 'Обязательное поле';
@@ -55,7 +55,6 @@ export const SendForm = () => {
     });
 
     async function sendEmail(values: FormValues) {
-        // setLoading(true)
         const chatId = '-4185811054';
         const parseMode = 'Markdown';
         const message = `
@@ -164,7 +163,7 @@ export const SendForm = () => {
                                     {['Красное сухое вино', 'Красное полусладкое вино', 'Белое сухое вино', 'Белое полусладкое вино', 'Шампанское', 'Коньяк', 'Водка', 'Безалкогольные напитки'].map((preference) => (
                                         <FormControlLabel
                                             key={preference}
-                                            control={<Checkbox color={'default'} />}
+                                            control={<Checkbox color={'default'}/>}
                                             label={preference}
                                             checked={Array.isArray(formik.values.alcoholPreferences)
                                                 ? formik.values.alcoholPreferences.includes(preference)
@@ -173,11 +172,7 @@ export const SendForm = () => {
                                                 const isChecked = event.target.checked;
                                                 formik.setFieldValue(
                                                     'alcoholPreferences',
-                                                    Array.isArray(formik.values.alcoholPreferences)
-                                                        ? isChecked
-                                                            ? [...formik.values.alcoholPreferences, preference]
-                                                            : formik.values.alcoholPreferences.filter((value) => value !== preference)
-                                                        : isChecked ? [preference] : ''
+                                                    isChecked ? preference : ''
                                                 );
                                             }}
                                         />
@@ -201,7 +196,7 @@ export const SendForm = () => {
                             />
                         </div>
                     </div>
-                    <div >
+                    <div>
                         <button className={s.button} type="submit">Отправить!</button>
                     </div>
                 </form>
