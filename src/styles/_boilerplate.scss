@@ -1,0 +1,53 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button,
+select,
+textarea,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/main.JPG");
+  background-size: cover;
+  //background-position: center;
+  background-attachment: fixed;
+  //background-repeat: no-repeat;
+  background-position: center 30%;
+  line-height: 1.2;
+
+  font-family: var(--font-family-primary), sans-serif;
+  color: var(--color-dark);
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    background-position: center center;
+  }
+}

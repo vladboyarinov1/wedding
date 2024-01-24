@@ -1,0 +1,176 @@
+
+form {
+  text-align: initial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorText {
+  font-size: 12px;
+  color: #5F91E7;
+  font-weight: 500;
+}
+
+.wrapper {
+  padding: 120px 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(10 10 10 / 8%);
+  border-radius: 6px;
+}
+
+
+.progress {
+  position: absolute;
+  z-index: 2;
+  top: 30%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 577px;
+
+  & > h2 {
+    font-size: var(--font-size-huge);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  & > p {
+    margin: 14px 0 25px;
+
+    font-size: var(--font-size-xlarge);
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 2.07px;
+  }
+
+  & > p > span {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-blue);
+  }
+}
+
+.checkboxContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+
+.customFileUpload {
+  cursor: pointer;
+  display: flex;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.customFileUpload input {
+  display: none;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+
+}
+
+.title > div {
+  font-size: 21px;
+  letter-spacing: 1.3px;
+  font-weight: 500;
+}
+
+.title > p {
+  font-size: 21px;
+  letter-spacing: 1.3px;
+}
+
+
+.messageFormBlock {
+  padding-top: 20px;
+}
+
+.messageInput {
+  resize: none;
+  min-height: 120px;
+}
+
+.sendFileField {
+  & label > p {
+    font-size: var(--font-size-small);
+    color: var(--color-gray);
+  }
+
+  & label > p > span {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-dark-field);
+  }
+}
+
+.customFileUpload__input {
+  background-color: #5F91E7;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: rgba(255, 255, 255, 0.44);
+  border: none;
+  color: black;
+  font-weight: 500;
+  letter-spacing: 1.3px;
+  border-radius: 28px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  margin: 30px 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.49);
+}
+
+
+.alert {
+  position: fixed;
+  z-index: 9999;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+@media screen and (max-width: 800px) {
+  form {
+    padding: 0;
+
+  }
+  .wrapper {
+    padding: 0;
+  }
+
+  .formContainer {
+    padding: 54px 0px;
+  }
+}

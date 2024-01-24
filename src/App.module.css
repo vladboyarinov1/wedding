@@ -1,0 +1,259 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px 100px 100px 100px;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.name {
+    position: absolute;
+    bottom: 230px;
+    left: 120px;
+}
+
+.name > p {
+    font-family: var(--font-family-mark);
+    font-size: 44px;
+    color: white;
+}
+
+.content {
+    padding: 120px 100px 60px 100px;
+    background: rgba(255, 255, 255, 0.42);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.date {
+    margin-bottom: 340px;
+}
+
+.date > div {
+    font-size: 69px;
+    font-family: var(--font-family-mark);
+    margin-bottom: 20px;
+}
+
+.date > p {
+    font-size: 21px;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+}
+
+.place > div {
+    font-size: 69px;
+    font-family: var(--font-family-mark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.place > p {
+    font-size: 21px;
+    letter-spacing: 1.3px;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+}
+
+.plan {
+    margin-top: 230px;
+}
+
+.plan > p {
+    font-size: 69px;
+    font-family: var(--font-family-mark);
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 140px;
+    height: 140px;
+    border: 1.8px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.card_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 142px;
+}
+
+.card_item {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.planCards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.details_title {
+    font-size: 69px;
+    font-family: var(--font-family-mark);
+    margin-bottom: 20px;
+    margin-top: 230px;
+}
+
+.details_descr > p {
+    font-size: 21px;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+}
+
+.details_descr > a {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: rgba(255, 255, 255, 0.44);
+    border: none;
+    color: black;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    border-radius: 28px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    margin: 30px 0;
+}
+
+.details_descr > a:hover {
+    background-color: rgba(255, 255, 255, 0.49);
+}
+
+.wishes > div {
+    font-size: 69px;
+    font-family: var(--font-family-mark);
+    margin-bottom: 20px;
+    margin-top: 230px;
+}
+
+.wishes > p {
+    font-size: 21px;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        padding: 200px 10px 100px 10px;
+    }
+    .title {
+        justify-content: right;
+    }
+    .name {
+        position: absolute;
+        bottom: 100px;
+        left: 40px;
+    }
+
+    .name > p {
+        font-family: var(--font-family-mark);
+        font-size: 34px;
+        max-width: 140px;
+        color: white;
+    }
+
+    .content {
+        padding: 20px 20px 25px 20px;
+    }
+
+    .date {
+        margin-bottom: 120px;
+    }
+
+    .date > div {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .place > div {
+        font-size: 48px;
+    }
+
+    .place > p {
+        margin-bottom: 20px;
+    }
+
+    .map {
+        display: flex;
+        justify-content: center;
+    }
+
+    .plan {
+        margin-top: 120px;
+    }
+
+    .plan > p {
+        font-size: 48px;
+        font-family: var(--font-family-mark);
+        margin-bottom: 30px;
+    }
+
+    .circle {
+        width: 140px;
+        height: 140px;
+        border: 1.8px solid rgb(0, 0, 0);
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .card_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 142px;
+    }
+
+    .card_item {
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .planCards {
+        gap: 30px;
+    }
+
+    .details_title {
+        font-size: 48px;
+        margin-top: 120px;
+    }
+
+    .wishes > div {
+        font-size: 48px;
+        font-family: var(--font-family-mark);
+        margin-bottom: 20px;
+        margin-top: 120px;
+    }
+
+    .wishes > p {
+        font-size: 21px;
+        letter-spacing: 1.3px;
+        font-weight: 500;
+    }
+
+}
