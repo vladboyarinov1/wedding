@@ -1,7 +1,5 @@
-import {useState} from 'react';
 import {
     Checkbox,
-    CircularProgress,
     FormControl,
     FormControlLabel,
     FormGroup,
@@ -20,12 +18,11 @@ interface FormValues {
     presence: string | null;
     alcoholPreferences: string[] | string;
     secondDay: string | null;
-    music: string
+    music: string;
 }
 
 
 export const SendForm = () => {
-    const [loading, setLoading] = useState<boolean>(false);
     const formik = useFormik<FormValues>({
         initialValues: {
             name: '',
@@ -70,7 +67,6 @@ export const SendForm = () => {
    🎵 *Музыка*: *${values.music ?? 'Не указано'}*
    `
         try {
-            setLoading(true)
             const res = await axios.get(`https://api.telegram.org/bot6708801756:AAGbODKCspD-QUFJ9EVWjmwNfIBIRoNSpf0/sendMessage`, {
                 params: {
                     chat_id: chatId,
@@ -80,13 +76,10 @@ export const SendForm = () => {
             })
             if (res.status) {
                 console.log('ok')
-                setLoading(false)
             } else {
-                setLoading(false)
                 console.log('ne ok')
             }
         } catch (e) {
-            setLoading(false)
             console.log('ne ok 2')
         }
     }
@@ -211,8 +204,6 @@ export const SendForm = () => {
                     <div >
                         <button className={s.button} type="submit">Отправить!</button>
                     </div>
-                    {loading && <CircularProgress className={s.progress}/>}
-                    {loading && <div className={s.overlay}/>}
                 </form>
             </div>
         </div>
