@@ -299,7 +299,7 @@ export const SendForm = () => {
                             helperText={formik.touched.music && formik.errors.music}
                         />
                     </div>
-                    <div>
+                    <div style={{textAlign: 'center'}}>
                         <button className={s.button} type="submit">Отправить!</button>
                     </div>
                 </form>
