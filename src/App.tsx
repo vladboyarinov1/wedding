@@ -8,6 +8,7 @@ import {Vp} from './img/icons/components/vp.tsx';
 import {useWindowSize} from './hooks/use-window-size.ts';
 import Clock from './components/time/time.tsx';
 import {SendForm} from './components/form/form.tsx';
+import Fade from 'react-reveal/Fade'
 
 
 
@@ -17,27 +18,33 @@ function App() {
     const mobile = width && width > 1000
     const targetDate = new Date('2024-05-11T23:27:20.116+00:00');
     return (
-        <div >
+        <div>
             <div className={s.container}>
                 <div className={s.background}></div>
-                <div className={s.title}>
-                    <div><Vp width={mobile ? 490 : 290} height={mobile ? 546 : 346}/></div>
-                    <div className={s.name}>
-                        <p>Вадим и Полина</p>
-                    </div>
-                </div>
+              <Fade left>
+                  <div className={s.title}>
+                      <div><Vp width={mobile ? 490 : 290} height={mobile ? 546 : 346}/></div>
+                      <div className={s.name}>
+                          <p>Вадим и Полина</p>
+                      </div>
+                  </div>
+              </Fade>
                 <div className={s.content}>
                     <div className={s.date}>
                         <div className={s.time}>11 - 05 - 2024</div>
-                        <p>Один день в этом году будет для нас особенным, и мы хотим провести его
-                            в кругу близких и друзей!
-                            С большим удовольствием приглашаем вас на замечательный праздник -
-                            нашу свадьбу!</p>
+                        <Fade right>
+                            <p>Один день в этом году будет для нас особенным, и мы хотим провести его
+                                в кругу близких и друзей!
+                                С большим удовольствием приглашаем вас на замечательный праздник -
+                                нашу свадьбу!</p>
+                        </Fade>
                     </div>
                     <div className={s.place}>
                         <div>Место проведения</div>
-                        <p>Венчание будет проходить в Костеле Божьего Милосердия по адресу: г.Лида ул.Строителей д.33.
-                            Церемония и последующий уютный вечер будет проходить по адресу г.Лида ул. Фомичева 1.</p>
+                        <Fade left>
+                            <p>Венчание будет проходить в Костеле Божьего Милосердия по адресу: г.Лида ул.Строителей д.33.
+                                Церемония и последующий уютный вечер будет проходить по адресу г.Лида ул. Фомичева 1.</p>
+                        </Fade>
                         <div className={s.map}>
                             <YMaps>
                                 <Map width={'90%'} height={300}
@@ -52,7 +59,7 @@ function App() {
                     </div>
                     <div className={s.plan}>
                         <p>План Мероприятия</p>
-                        <div className={s.planCards}>
+                        <Fade bottom><div className={s.planCards}>
                             <div className={s.card_item}>
                                 <div className={s.circle}>
                                     <div><Church/></div>
@@ -77,29 +84,35 @@ function App() {
                                 </div>
                                 <p> 17:00 - Банкет</p>
                             </div>
-                        </div>
+                        </div></Fade>
                     </div>
                     <div className={s.details}>
                         <div className={s.details_title}>Детали</div>
-                        <div className={s.details_descr}>
-                            <p>По всем вопросам, связанными с
-                                торжественным вечером и сюрпризами,
-                                обращаться к нашему ведущему -
-                                Олегу.</p>
-                            <a href="tel:+375295677829">+375295677829</a>
-                        </div>
+                      <Fade right>
+                          <div className={s.details_descr}>
+                              <p>По всем вопросам, связанными с
+                                  торжественным вечером и сюрпризами,
+                                  обращаться к нашему ведущему -
+                                  Олегу.</p>
+                              <a href="tel:+375295677829">+375295677829</a>
+                          </div>
+                      </Fade>
                     </div>
                     <div className={s.wishes}>
                         <div>Пожелания</div>
-                        <p>Вместо традиционных цветов, мы бы хотели попросить вас поделиться с нами вашим любимым напитком
-                            или настольной игрой, чтобы добавить к нашим воспоминаниям ещё больше веселья и вкусных
-                            моментов.</p>
+                        <Fade left>
+                            <p>Вместо традиционных цветов, мы бы хотели попросить вас поделиться с нами вашим любимым напитком
+                                или настольной игрой, чтобы добавить к нашим воспоминаниям ещё больше веселья и вкусных
+                                моментов.</p>
+                        </Fade>
                     </div>
                     <div className={s.form}>
                         <SendForm/>
                     </div>
                 </div>
-                <Clock deadline={targetDate}/>
+                <Fade bottom>
+                    <Clock deadline={targetDate}/>
+                </Fade>
             </div>
         </div>
     )
