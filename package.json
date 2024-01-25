@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@fontsource-variable/dancing-script": "^5.0.16",
     "@fontsource-variable/lora": "^5.0.9",
     "@fontsource/bad-script": "^5.0.8",
