@@ -7,7 +7,7 @@ import {Restaurant} from './img/icons/components/restaurant.tsx';
 import {Vp} from './img/icons/components/vp.tsx';
 import {useWindowSize} from './hooks/use-window-size.ts';
 import Clock from './components/time/time.tsx';
-import {SendForm} from './components/form/form.tsx';
+
 
 
 
@@ -93,7 +93,7 @@ function App() {
                         моментов.</p>
                 </div>
                 <div className={s.form}>
-                    <SendForm/>
+                    {/*<SendForm/>*/}
                 </div>
             </div>
             <Clock deadline={targetDate}/>
