@@ -63,7 +63,7 @@ function App() {
                                 <div className={s.circle}>
                                     <div><Stemware/></div>
                                 </div>
-                                <p> 15:00 - Фуршет</p>
+                                <p> 15:30 - Фуршет</p>
                             </div>
                             <div className={s.card_item}>
                                 <div className={s.circle}>

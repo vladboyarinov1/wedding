@@ -7,12 +7,12 @@
     background-image: url("img/main.JPG");
     background-size: cover;
     background-position: center 30%;
-    z-index: -1; /* Чтобы фон был под контентом */
+    z-index: -1;
 }
 
 .container {
-    position: relative; /* Добавлено */
-    overflow: auto; /* Добавлено */
+    position: relative;
+    overflow: auto;
     max-width: 1200px;
     margin: 0 auto;
     padding: 150px 100px 100px 100px;
