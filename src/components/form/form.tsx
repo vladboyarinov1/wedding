@@ -32,7 +32,7 @@ export const SendForm = () => {
         },
         onSubmit: (values: any) => {
             sendEmail(values)
-            formik.resetForm()
+            // formik.resetForm()
         },
         validate: (values) => {
             const errors: Partial<FormValues> = {};
@@ -55,7 +55,7 @@ export const SendForm = () => {
     });
 
     async function sendEmail(values: FormValues) {
-        const chatId = '-4185811054';
+        const chatId = '-1002007617449';
         const parseMode = 'Markdown';
         const message = `
    🎉 *Информация о гостях* 🎉
@@ -235,22 +235,22 @@ export const SendForm = () => {
                                         }
                                     }}
                                 />
-                                <FormControlLabel
-                                    control={<Checkbox color={'default'}/>}
-                                    label="Коньяк"
-                                    value="Коньяк"
-                                    onChange={(event: any) => {
-                                        const isChecked = event.target.checked;
-                                        if (typeof formik.values.alcoholPreferences !== 'string') {
-                                            formik.setFieldValue(
-                                                'alcoholPreferences',
-                                                isChecked
-                                                    ? [...formik.values.alcoholPreferences, 'Коньяк']
-                                                    : formik.values.alcoholPreferences.filter((preference) => preference !== 'Коньяк')
-                                            );
-                                        }
-                                    }}
-                                />
+                                {/*<FormControlLabel*/}
+                                {/*    control={<Checkbox color={'default'}/>}*/}
+                                {/*    label="Коньяк"*/}
+                                {/*    value="Коньяк"*/}
+                                {/*    onChange={(event: any) => {*/}
+                                {/*        const isChecked = event.target.checked;*/}
+                                {/*        if (typeof formik.values.alcoholPreferences !== 'string') {*/}
+                                {/*            formik.setFieldValue(*/}
+                                {/*                'alcoholPreferences',*/}
+                                {/*                isChecked*/}
+                                {/*                    ? [...formik.values.alcoholPreferences, 'Коньяк']*/}
+                                {/*                    : formik.values.alcoholPreferences.filter((preference) => preference !== 'Коньяк')*/}
+                                {/*            );*/}
+                                {/*        }*/}
+                                {/*    }}*/}
+                                {/*/>*/}
                                 <FormControlLabel
                                     control={<Checkbox color={'default'}/>}
                                     label="Водка"
