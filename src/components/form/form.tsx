@@ -269,6 +269,22 @@ export const SendForm = () => {
                                 />
                                 <FormControlLabel
                                     control={<Checkbox color={'default'}/>}
+                                    label="Виски"
+                                    value="Виски"
+                                    onChange={(event: any) => {
+                                        const isChecked = event.target.checked;
+                                        if (typeof formik.values.alcoholPreferences !== 'string') {
+                                            formik.setFieldValue(
+                                                'alcoholPreferences',
+                                                isChecked
+                                                    ? [...formik.values.alcoholPreferences, 'Виски']
+                                                    : formik.values.alcoholPreferences.filter((preference) => preference !== 'Виски')
+                                            );
+                                        }
+                                    }}
+                                />
+                                <FormControlLabel
+                                    control={<Checkbox color={'default'}/>}
                                     label="Безалкогольные напитки"
                                     value="Безалкогольные напитки"
                                     onChange={(event: any) => {
@@ -283,6 +299,7 @@ export const SendForm = () => {
                                         }
                                     }}
                                 />
+
                             </FormGroup>
                         </FormControl>
                     </div>
