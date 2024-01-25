@@ -55,7 +55,7 @@ export const SendForm = () => {
     });
 
     async function sendEmail(values: FormValues) {
-        const chatId = '-1002007617449';
+        const chatId = '-4163092879';
         const parseMode = 'Markdown';
         const message = `
    🎉 *Информация о гостях* 🎉
