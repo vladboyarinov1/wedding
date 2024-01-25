@@ -1,9 +1,12 @@
 
 form {
-  text-align: initial;
+  text-align: initial !important;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
+  border: 1px solid;
+  width: 70%;
+
 }
 
 .errorText {
@@ -164,6 +167,7 @@ form {
 @media screen and (max-width: 800px) {
   form {
     padding: 0;
+    width: 100%;
 
   }
   .wrapper {
