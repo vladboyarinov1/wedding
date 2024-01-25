@@ -2,7 +2,7 @@ import {useFormik} from 'formik';
 import s from './form.module.scss';
 import axios from 'axios';
 import {
-    Checkbox,
+    Checkbox, CircularProgress,
     FormControl,
     FormControlLabel,
     FormGroup,
@@ -11,6 +11,8 @@ import {
     RadioGroup,
     TextField
 } from '@mui/material';
+import {useState} from 'react';
+import {SuccessfulSnackbar} from '../successful-snackbar/successful-snackbar.tsx';
 
 
 interface FormValues {
@@ -22,6 +24,8 @@ interface FormValues {
 }
 
 export const SendForm = () => {
+    const [loading, setLoading] = useState<boolean>(false)
+    const [sendStatusMessage, setSendStatusMessage] = useState<null | string>('')
     const formik = useFormik<FormValues>({
         initialValues: {
             name: '',
@@ -65,6 +69,7 @@ export const SendForm = () => {
    🍷 *Алкоголь*: *${values.alcoholPreferences}*,
    🎵 *Музыка*: *${values.music ?? 'Не указано'}*
    `
+        setLoading(true)
         try {
             const res = await axios.get(`https://api.telegram.org/bot6708801756:AAGbODKCspD-QUFJ9EVWjmwNfIBIRoNSpf0/sendMessage`, {
                 params: {
@@ -73,18 +78,27 @@ export const SendForm = () => {
                     text: message
                 }
             })
-            if (res.status) {
-                console.log('ok')
+            if (res.status === 200) {
+                formik.setStatus({ sent: true })
+                setSendStatusMessage('Форма успешно отправлена!')
+                setLoading(false)
             } else {
-                console.log('ne ok')
+                formik.setStatus({ sent: true })
+                setSendStatusMessage('Ошибка! Повторите попытку.')
             }
         } catch (e) {
-            console.log('ne ok 2')
+            setLoading(false)
+            setSendStatusMessage('Ошибка! Повторите попытку.')
         }
     }
 
     return (
         <div className={s.wrapper} id="form">
+            <SuccessfulSnackbar
+                isOpen={formik.status?.sent}
+                message={sendStatusMessage}
+                setStatus={formik.setStatus}
+            />
             <div className={s.formContainer}>
                 <div className={s.title}>
                     <div>Пожалуйста, чтобы всё прошло идеально, ответьте на несколько вопросов в анкете:</div>
@@ -235,22 +249,22 @@ export const SendForm = () => {
                                         }
                                     }}
                                 />
-                                {/*<FormControlLabel*/}
-                                {/*    control={<Checkbox color={'default'}/>}*/}
-                                {/*    label="Коньяк"*/}
-                                {/*    value="Коньяк"*/}
-                                {/*    onChange={(event: any) => {*/}
-                                {/*        const isChecked = event.target.checked;*/}
-                                {/*        if (typeof formik.values.alcoholPreferences !== 'string') {*/}
-                                {/*            formik.setFieldValue(*/}
-                                {/*                'alcoholPreferences',*/}
-                                {/*                isChecked*/}
-                                {/*                    ? [...formik.values.alcoholPreferences, 'Коньяк']*/}
-                                {/*                    : formik.values.alcoholPreferences.filter((preference) => preference !== 'Коньяк')*/}
-                                {/*            );*/}
-                                {/*        }*/}
-                                {/*    }}*/}
-                                {/*/>*/}
+                                <FormControlLabel
+                                    control={<Checkbox color={'default'}/>}
+                                    label="Коньяк"
+                                    value="Коньяк"
+                                    onChange={(event: any) => {
+                                        const isChecked = event.target.checked;
+                                        if (typeof formik.values.alcoholPreferences !== 'string') {
+                                            formik.setFieldValue(
+                                                'alcoholPreferences',
+                                                isChecked
+                                                    ? [...formik.values.alcoholPreferences, 'Коньяк']
+                                                    : formik.values.alcoholPreferences.filter((preference) => preference !== 'Коньяк')
+                                            );
+                                        }
+                                    }}
+                                />
                                 <FormControlLabel
                                     control={<Checkbox color={'default'}/>}
                                     label="Водка"
@@ -320,6 +334,8 @@ export const SendForm = () => {
                     <div style={{textAlign: 'center'}}>
                         <button className={s.button} type="submit">Отправить!</button>
                     </div>
+                    {loading ? <CircularProgress className={s.progress} /> : ''}
+                    {loading && <div className={s.overlay} />}
                 </form>
             </div>
         </div>

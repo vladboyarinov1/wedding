@@ -4,7 +4,27 @@ form {
   display: flex;
   flex-direction: column;
   width: 70%;
+  position: relative;
 
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(101, 101, 101, 0.5) !important;
+  border-radius: 6px;
+  z-index: 100;
+}
+.progress {
+  position: absolute;
+  z-index: 2;
+  top: 60% !important;
+  left: 45%;
+  transform: translate(-50%, -50%);
 }
 
 .errorText {

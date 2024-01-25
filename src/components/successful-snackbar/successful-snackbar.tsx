@@ -28,7 +28,7 @@ export const SuccessfulSnackbar: FC<PropsType> = ({ isOpen, message, setStatus }
           severity={'success'}
           sx={{
             background:
-              'linear-gradient(147.71deg, var(--color-blue-lightest) 0%, var(--color-blue-darkest) 100%)',
+              '#E9CF6F',
             width: '100%',
           }}
         >
