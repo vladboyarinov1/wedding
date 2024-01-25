@@ -1,7 +1,8 @@
 import {useFormik} from 'formik';
 import s from './form.module.scss';
 import axios from 'axios';
-import TextField from '@mui/material/TextField/TextField';
+import {TextField} from '@mui/material';
+
 
 interface FormValues {
     name: string;
