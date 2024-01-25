@@ -32,6 +32,7 @@ export const SendForm = () => {
         },
         onSubmit: (values: any) => {
             sendEmail(values)
+            formik.resetForm()
         },
         validate: (values) => {
             const errors: Partial<FormValues> = {};
