@@ -1,6 +1,7 @@
 import {useFormik} from 'formik';
 import s from './form.module.scss';
 import axios from 'axios';
+import TextField from '@mui/material/TextField/TextField';
 
 interface FormValues {
     name: string;
@@ -85,16 +86,16 @@ export const SendForm = () => {
                             {formik.touched.name && formik.errors.name && (
                                 <div className={s.errorText}>{formik.errors.name}</div>
                             )}
-                            {/*<TextField*/}
-                            {/*    style={{width: '100%'}}*/}
-                            {/*    variant="standard"*/}
-                            {/*    className="form-control"*/}
-                            {/*    id="name"*/}
-                            {/*    placeholder="Иван Иванов, Мария Иванова"*/}
-                            {/*    label="Имя и Фамилия гостей"*/}
-                            {/*    type="text"*/}
-                            {/*    {...formik.getFieldProps('name')}*/}
-                            {/*/>*/}
+                            <TextField
+                                style={{width: '100%'}}
+                                variant="standard"
+                                className="form-control"
+                                id="name"
+                                placeholder="Иван Иванов, Мария Иванова"
+                                label="Имя и Фамилия гостей"
+                                type="text"
+                                {...formik.getFieldProps('name')}
+                            />
                         </div>
                     </div>
 
