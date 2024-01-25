@@ -9,7 +9,6 @@ import {
     TextField
 } from '@mui/material';
 import {useFormik} from 'formik';
-import {SuccessfulSnackbar} from '../successful-snackbar/successful-snackbar.tsx';
 import s from './form.module.scss';
 import axios from 'axios';
 
@@ -85,11 +84,6 @@ export const SendForm = () => {
 
     return (
         <div className={s.wrapper} id="form">
-            <SuccessfulSnackbar
-                isOpen={formik.status?.sent}
-                message="lalal"
-                setStatus={formik.setStatus}
-            />
             <div className={s.formContainer}>
                 <div className={s.title}>
                     <div>Пожалуйста, чтобы всё прошло идеально, ответьте на несколько вопросов в анкете:</div>
