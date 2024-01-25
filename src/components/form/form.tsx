@@ -1,6 +1,7 @@
 import {useFormik} from 'formik';
 import s from './form.module.scss';
 import axios from 'axios';
+import {TextField} from '@mui/material';
 
 interface FormValues {
     name: string;
@@ -80,22 +81,24 @@ export const SendForm = () => {
                 </div>
 
                 <form encType="multipart/form-data" method="POST" onSubmit={formik.handleSubmit}>
-                    {/*<div className={s.nameFormBlock}>*/}
-                    {/*    <div style={{marginBottom: '25px'}}>*/}
-                    {/*        {formik.touched.name && formik.errors.name && (*/}
-                    {/*            <div className={s.errorText}>{formik.errors.name}</div>*/}
-                    {/*        )}*/}
-                    {/*        <TextField*/}
-                    {/*            style={{width: '100%'}}*/}
-                    {/*            variant="standard"*/}
-                    {/*            className="form-control"*/}
-                    {/*            id="name"*/}
-                    {/*            placeholder="Иван Иванов, Мария Иванова"*/}
-                    {/*            label="Имя и Фамилия гостей"*/}
-                    {/*            type="text"*/}
-                    {/*            {...formik.getFieldProps('name')}*/}
-                    {/*        />*/}
-                    {/*    </div>*/}
+                    <div className={s.nameFormBlock}>
+                        <div style={{marginBottom: '25px'}}>
+                            {formik.touched.name && formik.errors.name && (
+                                <div className={s.errorText}>{formik.errors.name}</div>
+                            )}
+                            <TextField
+                                style={{width: '100%'}}
+                                variant="standard"
+                                className="form-control"
+                                id="name"
+                                placeholder="Иван Иванов, Мария Иванова"
+                                label="Имя и Фамилия гостей"
+                                type="text"
+                                {...formik.getFieldProps('name')}
+                            />
+                        </div>
+                    </div>
+
                     {/*    <div style={{marginBottom: '25px'}}>*/}
                     {/*        <FormControl>*/}
                     {/*            {formik.touched.presence && formik.errors.presence && (*/}
