@@ -1,91 +1,100 @@
+import s from './App.module.css'
+import {Map, Placemark, YMaps} from '@pbe/react-yandex-maps';
+import {Church} from './img/icons/components/church.tsx';
+import {Wedding} from './img/icons/components/wedding.tsx';
+import {Stemware} from './img/icons/components/stemware.tsx';
+import {Restaurant} from './img/icons/components/restaurant.tsx';
+import {Vp} from './img/icons/components/vp.tsx';
+import {useWindowSize} from './hooks/use-window-size.ts';
+
+
 function App() {
-    // const {width} = useWindowSize()
-    // const mobile = width && width > 1000
+    const {width} = useWindowSize()
+    const mobile = width && width > 1000
     // const targetDate = new Date('2024-05-11T23:27:20.116+00:00');
     return (
-        // <div className={s.container}>
-        //     <div className={s.title}>
-        //         <div><Vp width={mobile ? 490 : 290} height={mobile ? 546 : 346}/></div>
-        //         <div className={s.name}>
-        //             <p>Вадим и Полина</p>
-        //         </div>
-        //     </div>
-        //     <div className={s.content}>
-        //         <div className={s.date}>
-        //             <div className={s.time}>11 - 05 - 2024</div>
-        //             <p>Один день в этом году будет для нас особенным, и мы хотим провести его
-        //                 в кругу близких и друзей!
-        //                 С большим удовольствием приглашаем вас на замечательный праздник -
-        //                 нашу свадьбу!</p>
-        //         </div>
-        //         <div className={s.place}>
-        //             <div>Место проведения</div>
-        //             <p>Венчание будет проходить в Костеле Божьего Милосердия по адресу: г.Лида ул.Строителей д.33.
-        //                 Церемония и последующий уютный вечер будет проходить по адресу г.Лида ул. Фомичева 1.</p>
-        //             <div className={s.map}>
-        //                 <YMaps>
-        //                     <Map width={'90%'} height={300}
-        //                          defaultState={{center: [53.91105351767865, 25.239165695359713], zoom: 12}}>
-        //                         <Placemark geometry={[53.91105351767865, 25.239165695359713]}
-        //                                    properties={{hintContent: 'Банкет'}}/>
-        //                         <Placemark geometry={[53.922348640326426, 25.246485043961126]}
-        //                                    properties={{hintContent: 'Венчание'}}/>
-        //                     </Map>
-        //                 </YMaps>
-        //             </div>
-        //         </div>
-        //         <div className={s.plan}>
-        //             <p>План Мероприятия</p>
-        //             <div className={s.planCards}>
-        //                 <div className={s.card_item}>
-        //                     <div className={s.circle}>
-        //                         <div><Church/></div>
-        //                     </div>
-        //                     <p> 14:00 - Венчание</p>
-        //                 </div>
-        //                 <div className={s.card_item}>
-        //                     <div className={s.circle}>
-        //                         <div><Stemware/></div>
-        //                     </div>
-        //                     <p> 15:00 - Фуршет</p>
-        //                 </div>
-        //                 <div className={s.card_item}>
-        //                     <div className={s.circle}>
-        //                         <div><Wedding/></div>
-        //                     </div>
-        //                     <p> 16:00 - Выездная церемония</p>
-        //                 </div>
-        //                 <div className={s.card_item}>
-        //                     <div className={s.circle}>
-        //                         <div><Restaurant/></div>
-        //                     </div>
-        //                     <p> 17:00 - Банкет</p>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //         <div className={s.details}>
-        //             <div className={s.details_title}>Детали</div>
-        //             <div className={s.details_descr}>
-        //                 <p>По всем вопросам, связанными с
-        //                     торжественным вечером и сюрпризами,
-        //                     обращаться к нашему ведущему -
-        //                     Олегу.</p>
-        //                 <a href="tel:+375295677829">+375295677829</a>
-        //             </div>
-        //         </div>
-        //         <div className={s.wishes}>
-        //             <div>Пожелания</div>
-        //             <p>Вместо традиционных цветов, мы бы хотели попросить вас поделиться с нами вашим любимым напитком
-        //                 или настольной игрой, чтобы добавить к нашим воспоминаниям ещё больше веселья и вкусных
-        //                 моментов.</p>
-        //         </div>
-        //         <div className={s.form}>
-        //             <SendForm/>
-        //         </div>
-        //     </div>
-        //     <Clock deadline={targetDate}/>
-        // </div>
-        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores excepturi facere minus nihil non odit quos sapiente soluta voluptate. Facere molestias, nobis nulla praesentium reprehenderit sit unde. Aperiam ducimus pariatur quaerat quis. Aut deserunt ducimus, eos ipsum libero nam neque tenetur? Earum eius recusandae repudiandae ut? Alias, aspernatur at blanditiis consectetur dolorem eaque est exercitationem molestiae nam obcaecati quam ratione soluta tempore? Cupiditate, expedita obcaecati! Alias aliquid aperiam commodi consectetur consequatur cupiditate dicta error, est eveniet facere facilis harum illo iusto optio possimus repellendus suscipit temporibus tenetur totam voluptatibus? Animi asperiores at cum deleniti eaque eveniet exercitationem, impedit magnam minima nam nulla obcaecati odio quae quibusdam sequi! Aspernatur atque cumque, earum in ipsa porro quo vero? Ad dicta doloremque dolorum eaque enim ex expedita, inventore, libero magni, nemo sint soluta temporibus ut. Ab accusamus adipisci at aut blanditiis culpa delectus deserunt dicta ducimus eaque enim eum exercitationem expedita facere, fugit hic impedit iusto laborum laudantium maiores non nulla optio perspiciatis quas qui quod repellat reprehenderit sed unde velit? Deserunt dolorum possimus sapiente. Accusantium, aliquid culpa distinctio dolore ex maiores minus, nemo numquam omnis optio placeat provident, quia quibusdam quo similique suscipit vitae? Ab, amet assumenda aut beatae cum earum eius enim explicabo id impedit in magnam mollitia nemo, neque nihil nulla numquam odio pariatur qui quo sapiente sit unde voluptates? Amet consequuntur corporis doloremque, ducimus ex excepturi fugit id incidunt ipsum itaque nulla numquam placeat possimus qui quod repudiandae voluptatem. Aliquam architecto autem consectetur, enim laboriosam nemo qui rem. Adipisci amet beatae cum dicta earum eius ex facere laboriosam magnam maxime modi molestiae natus nesciunt, nisi optio praesentium quae quaerat quis recusandae reiciendis repudiandae sunt tenetur voluptate? Consectetur distinctio ducimus enim, eos incidunt odit placeat sapiente suscipit totam voluptatum. Beatae, consectetur, odio. Assumenda aut deleniti, et maiores molestias quae quos velit? Adipisci animi cumque, distinctio eligendi est eveniet facere fugit harum illo in ipsa laboriosam laborum libero maiores minus neque odit officia placeat quam qui recusandae sequi similique, sunt temporibus tenetur vel, voluptatibus! Aliquid deserunt harum, impedit magnam, pariatur qui quis quod rem sequi similique voluptate voluptatum! Blanditiis cum dolorem illum nostrum odit quidem repudiandae, rerum similique velit vero voluptas voluptate voluptatum. Dolor eligendi eos et excepturi illo placeat porro quasi quo repudiandae tempore. Doloremque expedita harum iste nesciunt odio quibusdam tempora vel? A aperiam atque beatae consequatur cumque dignissimos, dolore et ex explicabo fugit illum in incidunt itaque molestiae nemo nihil nobis nostrum placeat quia recusandae repellat repudiandae sequi similique sint tempore temporibus veniam voluptas? Aspernatur assumenda dolor earum nulla, provident quidem recusandae suscipit voluptatibus. A aspernatur aut deleniti dolorem, eaque et ipsa ipsam maiores neque nihil nisi nobis pariatur quisquam sapiente sit, suscipit totam velit vitae? Aliquid culpa dignissimos dolorem dolorum maxime necessitatibus officiis perspiciatis ratione repellendus sapiente. Ab adipisci aspernatur atque ducimus enim inventore ipsa labore laborum, laudantium, minima nulla odio porro possimus quia quo totam voluptatibus. Assumenda, est iure nemo optio praesentium sint sit tenetur ullam! Ab ad consequuntur dicta eligendi enim est eveniet excepturi facilis id, itaque magni nisi nostrum nulla optio praesentium quaerat quasi repellat saepe sed similique sint temporibus ullam ut veritatis voluptas voluptate voluptatum? Aliquid consectetur debitis dolorum eaque eum eveniet expedita facere, fugiat hic itaque laboriosam nobis nostrum, odit officia pariatur quisquam rem suscipit vitae voluptatem voluptatibus? Ad animi beatae deserunt exercitationem fuga itaque, nostrum, optio perspiciatis quam recusandae rem vel! Architecto commodi consequuntur, dolorem dolorum esse facilis modi, nihil quam, quasi rem sequi tempora voluptates voluptatum. Accusantium architecto asperiores eligendi illo iste iusto maxime nisi, quia quos, rerum sequi soluta suscipit ut! Deserunt fuga inventore laborum necessitatibus perferendis placeat ratione repudiandae tempora veritatis voluptates! Alias, molestias perspiciatis. Accusantium consectetur pariatur sint vel? Ab alias aliquam aliquid, aperiam corporis culpa cum deleniti, dolor ducimus eos exercitationem iste iure minus nam natus obcaecati quae quasi qui quos saepe sequi sint tenetur! Architecto esse, et exercitationem officiis repellendus soluta suscipit. Asperiores est, fugit impedit ipsam magnam officia optio perferendis possimus quibusdam saepe, sit ut. Accusantium aliquid amet asperiores autem commodi deserunt dicta eaque eius est fuga illo illum in iste laboriosam magnam modi nemo neque nihil non numquam odio optio porro quae quam quasi quibusdam quis quisquam recusandae repudiandae rerum saepe sapiente sequi soluta suscipit tenetur veritatis, voluptas! Autem commodi consectetur dignissimos distinctio dolorum eaque earum hic id ipsum magnam molestiae, obcaecati praesentium repellat repudiandae ut! Amet cumque cupiditate dicta dolore dolorum ducimus eius est eum facere hic impedit inventore laboriosam non optio quos recusandae rerum saepe sequi soluta, ullam ut veritatis voluptatum. Accusamus adipisci dolorem ipsam nihil odio odit optio sunt voluptas! Animi aut autem beatae consequatur cumque dolor dolore dolorum earum eligendi excepturi exercitationem expedita facilis fugiat illum incidunt iure iusto labore libero mollitia necessitatibus nesciunt numquam obcaecati officia omnis perferendis possimus provident, quae quam quasi quo ratione sapiente sit tempora tenetur veritatis vitae voluptas! Ab expedita obcaecati quaerat quas repellendus sequi! Adipisci asperiores atque, consequuntur deserunt dolorem est nemo nisi, omnis perspiciatis, praesentium sit voluptatibus. Aliquam asperiores deserunt nihil. Cum cupiditate hic impedit, maxime minima provident quisquam repellat veritatis! Ad amet asperiores aut commodi cum, debitis dolor doloremque dolores ducimus eius esse et ex exercitationem id in inventore iure nam nihil nisi officia perferendis, porro quia quibusdam repellat reprehenderit repudiandae sint tempore. Cupiditate dolorem dolores, enim eos error eum facere inventore molestiae nostrum perferendis porro quaerat quasi, quo ratione sit soluta tempora, voluptatum. A aliquam amet atque, consequatur consequuntur culpa cum debitis dolorem dolores dolorum, eaque earum error explicabo illum itaque laboriosam laborum nostrum, officia optio perspiciatis quia quo recusandae reprehenderit sapiente sequi sunt temporibus unde. Accusamus ad asperiores, aut autem blanditiis consectetur delectus dicta dignissimos dolorum fuga, fugiat hic laborum mollitia numquam odit quam quod rem repellendus similique tempore tenetur unde velit veniam? Animi dolorum, fugit hic in, incidunt molestiae obcaecati perferendis perspiciatis placeat recusandae repellendus sequi ullam voluptate. Aspernatur autem consectetur cumque dignissimos eaque earum est excepturi id impedit in ipsum iure labore nesciunt officia quam quibusdam, sint tenetur ut vel voluptate! Doloremque facere laudantium nesciunt numquam obcaecati officia, placeat quidem rerum! A accusamus alias aperiam cupiditate dolor dolorum ducimus enim error, ex harum impedit in laborum libero maiores, necessitatibus nesciunt nihil omnis optio, pariatur perferendis quas qui quibusdam quidem recusandae tempora voluptatem voluptatum. Aliquam culpa dignissimos dolores ducimus iusto laborum numquam quasi quod? Accusantium alias cupiditate distinctio eius inventore ipsum maxime nesciunt reiciendis repudiandae veniam! A autem consectetur deleniti doloremque eveniet harum illum, inventore itaque, magni nesciunt, pariatur provident rem repudiandae tenetur voluptas voluptatem voluptatibus. Beatae cupiditate doloribus eaque explicabo facere, fuga iste iusto laborum nostrum nulla quo quos sed voluptatibus. Aliquid, aperiam aspernatur, blanditiis corporis culpa ducimus eum eveniet facilis illum libero minus nam nobis obcaecati officia provident quibusdam voluptatem? Aliquam animi aperiam assumenda aut autem corporis delectus deserunt, eaque earum eos, est eum ex facere facilis fuga illo ipsa iste laudantium minima modi molestiae nisi non officiis porro quaerat quidem sint suscipit temporibus totam veniam. Beatae distinctio reprehenderit tempora? Ad aperiam consequatur dignissimos doloremque eveniet fuga inventore iusto laboriosam maxime non omnis vel voluptatibus, voluptatum. Ab atque aut commodi consectetur cum debitis deserunt, dolorem doloremque dolorum earum eius est ex explicabo, facilis illum impedit incidunt laboriosam magnam mollitia nihil perspiciatis possimus provident quaerat sapiente temporibus unde vero. Consectetur consequuntur eveniet ex fuga, fugiat illo ipsa iure iusto rerum sequi. Adipisci aliquam aspernatur consectetur corporis delectus dolorem, doloribus enim eveniet facere harum illo illum itaque laborum magni maxime minus modi mollitia natus necessitatibus nesciunt omnis porro quasi qui rerum sapiente sed temporibus tenetur vero voluptas voluptate. Aliquam consectetur eligendi ex, harum incidunt, itaque iusto nisi officiis placeat praesentium rem sed soluta tempora voluptatem voluptates. Adipisci aperiam at consectetur, cumque earum esse excepturi explicabo harum illum impedit in ipsa iure minima nam nemo optio possimus praesentium quaerat quidem sed similique temporibus ullam voluptatibus. Alias aliquam amet aperiam aspernatur atque beatae consectetur cumque deserunt dicta doloremque doloribus, earum excepturi illum impedit iste itaque magnam odio possimus quas quasi quod similique soluta tenetur unde ut velit voluptas! A aliquid beatae debitis et ex excepturi molestias! Aperiam doloribus dolorum eaque, earum ex, fuga illo mollitia pariatur, provident quidem quos unde veniam vero? Accusamus aliquid aspernatur commodi culpa dicta impedit minima, nemo nisi omnis pariatur quibusdam recusandae reprehenderit sed tempora, veniam? Autem cupiditate eaque fuga harum itaque iusto, minima nobis officia quos tempora. Ad aliquid aut deleniti dicta dolorum eligendi, et fugit id magni maxime, soluta tempore, vel voluptatem voluptatibus voluptatum. Aperiam in nihil vitae! Aperiam asperiores at aut earum eos eum exercitationem labore natus sit vero. Ab accusantium, ad animi architecto aut commodi distinctio doloremque dolores doloribus earum eligendi enim eos illum iure laborum magni maxime molestiae natus neque possimus quisquam quod reiciendis sed sunt voluptas! Architecto commodi dolor eos, error id ipsum iusto nihil nulla odio sequi. Asperiores autem debitis dicta dolores dolorum error explicabo impedit inventore iure labore nemo nisi, obcaecati optio porro quas quia quod rem soluta tempore temporibus! Aut ea non officia recusandae, tempora tenetur voluptates. Animi delectus dolorem ducimus eos facilis molestias nam quas? Aliquid atque autem corporis cupiditate dicta ex fugit itaque, iusto nihil non odit optio praesentium quaerat quas quasi rerum velit. Aliquam amet aut, fugiat inventore obcaecati perferendis. Accusantium architecto blanditiis cupiditate ducimus esse expedita explicabo, illo ipsa magnam maiores modi mollitia nam obcaecati omnis possimus, quas quidem repudiandae sunt tempore ullam vel voluptate voluptatum! Accusantium ad, at blanditiis consequatur cumque debitis dignissimos ea eius eligendi est eum excepturi fuga impedit inventore iste iusto laboriosam magnam nam necessitatibus porro quaerat quas quia reprehenderit similique voluptatem. Architecto blanditiis, distinctio. Animi asperiores atque consequatur eveniet ex laboriosam libero, magnam odit optio, reiciendis, reprehenderit saepe soluta sunt tempore voluptate! Beatae dolor fugit itaque iure minima modi nihil nobis quae quo ratione, sed voluptatum. Iusto nesciunt odio quisquam. Aliquid blanditiis distinctio dolores doloribus ducimus ea exercitationem facilis id ipsum itaque laudantium libero magnam minus nam, necessitatibus porro possimus quas quod rem reprehenderit saepe sed vel voluptatum. Ab aspernatur cum incidunt mollitia nam nemo quasi quis quisquam tenetur voluptatem. Aut maiores pariatur quam quod sint. Aliquid architecto dolor dolorum eius esse est ex exercitationem, fuga hic minima molestias natus necessitatibus neque nostrum pariatur, porro reiciendis saepe sint tempore totam! Eveniet id iure neque optio recusandae repellat sunt tenetur ut vel. Amet, dolorum id iure pariatur placeat quidem sunt voluptate. Ab consectetur consequatur dolorum earum eos est eum nulla officiis praesentium recusandae. Animi beatae blanditiis provident sunt! Consequatur ipsa iste minus natus qui, reprehenderit soluta ullam! A aliquid aperiam at aut beatae consectetur cum dolore doloremque ducimus esse et facilis impedit incidunt ipsam, nemo nesciunt nihil omnis perferendis, perspiciatis quam quos rem repellat similique suscipit tenetur ullam, voluptatem voluptatibus! Atque eligendi facere incidunt iusto omnis quod veniam. Aliquam beatae ex iste natus, quas quod ullam veniam. A accusamus accusantium architecto aut corporis deserunt ducimus earum est fuga itaque magni maiores minima molestiae, necessitatibus nemo nihil nisi porro provident qui quia recusandae sapiente sint sunt tenetur totam ullam voluptatum! Ab ad assumenda blanditiis corporis culpa cumque debitis deserunt distinctio dolorum ea eaque et exercitationem, ipsa labore laboriosam maiores modi necessitatibus neque nesciunt nihil nulla odio officia officiis porro possimus praesentium quam quia rerum tempore temporibus tenetur ut vero voluptatibus. Adipisci, atque cum eius, eum fugiat hic ipsa ipsam iusto, magnam magni nam necessitatibus odio officiis placeat quae quaerat quam ratione rem rerum sequi tempore totam vel voluptatem. Architecto atque consequuntur, culpa deserunt dolores eius exercitationem itaque, natus porro quae reiciendis voluptatem. Necessitatibus, recusandae, repellat! Alias aliquid animi autem corporis ducimus impedit in itaque nobis optio placeat quasi quo reiciendis reprehenderit, sapiente similique, totam voluptas voluptate voluptatum. Accusamus ad cum distinctio explicabo facilis hic illo impedit, ipsa iure magnam minus molestias, natus neque non officia porro possimus qui quia quibusdam recusandae sed soluta vel? Corporis dolore, eum nobis nulla odio optio voluptatibus! Aut doloremque dolorum ipsum iure quo. Ducimus expedita impedit possimus repudiandae veniam! Corporis, neque, quis! Asperiores consequatur delectus expedita in praesentium, ullam ut. Adipisci aliquam consequatur excepturi, in ipsam maxime nihil non obcaecati ratione, reiciendis voluptas voluptates.</div>
+        <div className={s.container}>
+            <div className={s.title}>
+                <div><Vp width={mobile ? 490 : 290} height={mobile ? 546 : 346}/></div>
+                <div className={s.name}>
+                    <p>Вадим и Полина</p>
+                </div>
+            </div>
+            <div className={s.content}>
+                <div className={s.date}>
+                    <div className={s.time}>11 - 05 - 2024</div>
+                    <p>Один день в этом году будет для нас особенным, и мы хотим провести его
+                        в кругу близких и друзей!
+                        С большим удовольствием приглашаем вас на замечательный праздник -
+                        нашу свадьбу!</p>
+                </div>
+                <div className={s.place}>
+                    <div>Место проведения</div>
+                    <p>Венчание будет проходить в Костеле Божьего Милосердия по адресу: г.Лида ул.Строителей д.33.
+                        Церемония и последующий уютный вечер будет проходить по адресу г.Лида ул. Фомичева 1.</p>
+                    <div className={s.map}>
+                        <YMaps>
+                            <Map width={'90%'} height={300}
+                                 defaultState={{center: [53.91105351767865, 25.239165695359713], zoom: 12}}>
+                                <Placemark geometry={[53.91105351767865, 25.239165695359713]}
+                                           properties={{hintContent: 'Банкет'}}/>
+                                <Placemark geometry={[53.922348640326426, 25.246485043961126]}
+                                           properties={{hintContent: 'Венчание'}}/>
+                            </Map>
+                        </YMaps>
+                    </div>
+                </div>
+                <div className={s.plan}>
+                    <p>План Мероприятия</p>
+                    <div className={s.planCards}>
+                        <div className={s.card_item}>
+                            <div className={s.circle}>
+                                <div><Church/></div>
+                            </div>
+                            <p> 14:00 - Венчание</p>
+                        </div>
+                        <div className={s.card_item}>
+                            <div className={s.circle}>
+                                <div><Stemware/></div>
+                            </div>
+                            <p> 15:00 - Фуршет</p>
+                        </div>
+                        <div className={s.card_item}>
+                            <div className={s.circle}>
+                                <div><Wedding/></div>
+                            </div>
+                            <p> 16:00 - Выездная церемония</p>
+                        </div>
+                        <div className={s.card_item}>
+                            <div className={s.circle}>
+                                <div><Restaurant/></div>
+                            </div>
+                            <p> 17:00 - Банкет</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={s.details}>
+                    <div className={s.details_title}>Детали</div>
+                    <div className={s.details_descr}>
+                        <p>По всем вопросам, связанными с
+                            торжественным вечером и сюрпризами,
+                            обращаться к нашему ведущему -
+                            Олегу.</p>
+                        <a href="tel:+375295677829">+375295677829</a>
+                    </div>
+                </div>
+                <div className={s.wishes}>
+                    <div>Пожелания</div>
+                    <p>Вместо традиционных цветов, мы бы хотели попросить вас поделиться с нами вашим любимым напитком
+                        или настольной игрой, чтобы добавить к нашим воспоминаниям ещё больше веселья и вкусных
+                        моментов.</p>
+                </div>
+                {/*<div className={s.form}>*/}
+                {/*    <SendForm/>*/}
+                {/*</div>*/}
+            </div>
+            {/*<Clock deadline={targetDate}/>*/}
+        </div>
     )
 }
 
