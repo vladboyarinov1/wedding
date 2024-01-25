@@ -6,12 +6,14 @@ import {Stemware} from './img/icons/components/stemware.tsx';
 import {Restaurant} from './img/icons/components/restaurant.tsx';
 import {Vp} from './img/icons/components/vp.tsx';
 import {useWindowSize} from './hooks/use-window-size.ts';
+import Clock from './components/time/time.tsx';
+
 
 
 function App() {
     const {width} = useWindowSize()
     const mobile = width && width > 1000
-    // const targetDate = new Date('2024-05-11T23:27:20.116+00:00');
+    const targetDate = new Date('2024-05-11T23:27:20.116+00:00');
     return (
         <div className={s.container}>
             <div className={s.title}>
@@ -93,7 +95,7 @@ function App() {
                 {/*    <SendForm/>*/}
                 {/*</div>*/}
             </div>
-            {/*<Clock deadline={targetDate}/>*/}
+            <Clock deadline={targetDate}/>
         </div>
     )
 }
